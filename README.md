@@ -11,11 +11,22 @@ rails engineで、複数railsアプリでモデルを切り出し、共有する
 
 ## 動作確認
 
+### execute 1
 ``` bash
 $ bin/rails c
 [1] pry(main)> RailsEngineSample::User.all
   RailsEngineSample::User Load (0.4ms)  SELECT `rails_engine_sample_users`.* FROM `rails_engine_sample_users`
 => []
+```
+
+### execute 2
+
+``` bash
+[1] pry(main)> user = RailsEngineSample::User.new
+=> #<RailsEngineSample::User:0x00007f87ac2107d8 id: nil, created_at: nil, updated_at: nil>
+[2] pry(main)> user.hoge
+=> "hoge"
+
 ```
 
 ## 参考資料
